@@ -1,12 +1,19 @@
 import MeetupList from "../components/meetups/MeetupList"
 import Layout from "../components/layout/Layout"
 import { MongoClient } from "mongodb"
+import { Fragment } from "react/cjs/react.production.min"
 
 function HomePage(props){
     return (
-    <Layout>
-    <MeetupList meetups={props.meetups}/>
-    </Layout>
+        <Fragment>
+            <Head>
+               <title>React meetups</title>
+               <meta name="description" content="Browse a list of meetups"></meta>
+            </Head>
+            <Layout>
+               <MeetupList meetups={props.meetups}/>
+            </Layout>
+    </Fragment>
     )
 }
 // export async function getServerSideProps(context){
